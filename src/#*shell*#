@@ -1540,4 +1540,5 @@ Enter a 't' if you would like to tokenize a sentence, 'h' to get the history, '!
 > e
 
 Closing the program...
-student@systems-vm:~/corg/f24-corg-tokenizer-AndyR-11/src> 
+student@systems-vm:~/corg/f24-corg-tokenizer-AndyR-11/src> git add .
+student@systems-vm:~/corg/f24-corg-tokenizer-AndyR-11/src> git commit -m "c
