@@ -11,10 +11,10 @@ int space_char(char c) {
 }
 
 int non_space_char(char c) {
-  if ((c != ' ' || c != '\t') && c != '\0') {
-    return 1;
+  if ((c == ' ' || c == '\t') || c == '\0') {
+    return 0;
   }
-  return 0;
+  return 1;
 }
 
 char *token_start(char *str) {
@@ -68,7 +68,7 @@ char *copy_str(char *inStr, short len) {
 
 char **tokenize(char* str) {
   int token_count = count_tokens(str);
-  char **tokens = (char **)malloc(sizeof(char) * (token_count + 1));
+  char **tokens = malloc(sizeof(char *) * (token_count + 1));
 
   int i = 0;
   char *token = token_start(str);
@@ -89,37 +89,9 @@ void print_tokens(char **tokens) {
   }
 }
 
-void free_tokens(char **tokens) {
-  if(tokens = NULL) {
-    return;
-  }
-  
+void free_tokens(char **tokens) { 
   for (int i = 0; tokens[i] != NULL; i++) {
     free(tokens[i]);
   }
-  free(tokens);
 }
 
-/*#define MAX_STR_LENGTH 100
-int main() {
-  char str[MAX_STR_LENGTH];
-
-  printf("Hello, enter some text or 'e'  to exit\n");
-  
-  while(1) {
-    printf("> ");
-
-    if(fgets(str, 100, stdin) != NULL) {
-      if (str[0] == 'e') {
-      break;
-      }
-      printf("You entered: %s\n", str);
-    }
-    else {
-      break;
-    }
-  }
-  printf("Program exited.\n");
-  return 0;
-}
-*/
